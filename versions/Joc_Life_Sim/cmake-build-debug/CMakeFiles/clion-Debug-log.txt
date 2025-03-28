@@ -1,0 +1,4 @@
+/snap/clion/332/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/snap/clion/332/bin/ninja/linux/x64/ninja -G Ninja -S /home/robicu/Joc_Life_Sim -B /home/robicu/Joc_Life_Sim/cmake-build-debug
+-- Configuring done (0.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/robicu/Joc_Life_Sim/cmake-build-debug
