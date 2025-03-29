@@ -1,0 +1,3 @@
+/home/robicu/Joc_Life_Sim/cmake-build-debug/CMakeFiles/Joc_Life_Sim.dir
+/home/robicu/Joc_Life_Sim/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/robicu/Joc_Life_Sim/cmake-build-debug/CMakeFiles/rebuild_cache.dir
