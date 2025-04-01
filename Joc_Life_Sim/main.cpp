@@ -1,9 +1,6 @@
 #include <algorithm>
 #include <iostream>
-//A facut ceva
-//Deci merge
 
-//acum soto merge?
 
 #include "User.h"
 #include "Casino.h"
