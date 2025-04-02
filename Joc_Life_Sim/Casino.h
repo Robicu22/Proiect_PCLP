@@ -5,9 +5,9 @@
 #ifndef CASINO_H
 #define CASINO_H
 
+//robicu isi pierde pula la aparate xddddd
 
-
-class Casino {
+class Casino{
 public:
     int balance=1000;
     ///////methods
