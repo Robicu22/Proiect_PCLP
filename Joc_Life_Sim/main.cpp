@@ -19,7 +19,7 @@ int currentMonth = 0;
 void start() {
     cout<<"You just were born! Congrats welcome to the real world little one!\nSoon you will understand the real struggles of the humankind:) \n";
     cout<<"First please enter your name:\n";
-    cin>>user.name;
+    getline(cin, user.name);
     user.moneyPerYear= 30;
     user.money = 3000;
     user.age = 18;
@@ -61,11 +61,11 @@ void activites(int age) {
         switch (choice) {
 
             case 1: {
-                casino.ShowGames();
+               casino.ShowGames();
                 break;
             }
             case 2: {
-                jobs.Work(user.ocupation);
+               jobs.Work(user.ocupation);
                 break;
             }
             case 5: {
@@ -73,7 +73,7 @@ void activites(int age) {
                 break;
             }
             case 6: {
-                user.ShowPlayerStats();
+              user.ShowPlayerStats();
             }
         }
     }
