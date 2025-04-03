@@ -7,6 +7,7 @@
 #include "Deck_Of_Cards.h"
 #include "Jobs.h"
 #include "Study.h"
+#include "QualityTools.h"
 
 using namespace std;
 
@@ -15,6 +16,7 @@ User user;
 Casino casino;
 Deck_Of_Cards deck;
 Study study;
+QualityTools tools;
 int currentMonth = 0;
 void start() {
     cout<<"You just were born! Congrats welcome to the real world little one!\nSoon you will understand the real struggles of the humankind:) \n";
@@ -88,20 +90,27 @@ void activites(int age) {
 
 }
 int main() {
-    start();
-    cout<<"nenorocirile";
-    while (user.alive) {
-        activites(user.age);
+    // start();
+    // cout<<"nenorocirile";
+    // while (user.alive) {
+    //     activites(user.age);
+    //
+    //
+    //     //user.lifeExpentence = user.calculateLifeExpentence();
+    //     if (user.age >= 60) {
+    //         user.alive = false;
+    //         cout<<"You turned 60! You are too old to live.\n";
+    //     }
+    // }
+    //
+    // cout<<"Congrats you are dead!";
 
+    string s;
+    int n;
+    cin>>s>>n;
 
-        //user.lifeExpentence = user.calculateLifeExpentence();
-        if (user.age >= 60) {
-            user.alive = false;
-            cout<<"You turned 60! You are too old to live.\n";
-        }
-    }
+    cout<<tools.curse(s,n);
 
-    cout<<"Congrats you are dead!";
 
     return 0;
 }
