@@ -20,13 +20,13 @@ void start() {
     cout<<"You just were born! Congrats welcome to the real world little one!\nSoon you will understand the real struggles of the humankind:) \n";
     cout<<"First please enter your name:\n";
     getline(cin, user.name);
-    user.moneyPerYear= 30;
-    user.money = 3000;
-    user.age = 18;
+    user.moneyPerYear= 0;
+    user.money = 0;
+    user.age = 0;
     user.alive = true;
-    user.ocupation="Doctor";
-    user.study="kindergarnden";
-    user.uniSpec="engineer";
+    user.ocupation="";
+    user.study="kindergarden";
+    user.uniSpec="";
     user.inteligence=0;
     //user.health = 100;
 
@@ -53,6 +53,7 @@ void activites(int age) {
 
             cout<<"1. Gamble\n"
                 <<"2. Work\n"
+                <<"3. Study\n"
                 <<"5. Just die u fucking twat\n"
                 <<"6. Check stats\n";
 
@@ -68,6 +69,13 @@ void activites(int age) {
                jobs.Work(user.ocupation);
                 break;
             }
+            case 3:
+                if (user.age >= 19|| user.study == "Highschool") {
+                    study.ChoseUniversity();
+                }
+                study.StudyHard();
+                break;
+
             case 5: {
                 user.alive = false;
                 break;

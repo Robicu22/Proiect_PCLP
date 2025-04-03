@@ -216,6 +216,7 @@ void Casino::Blackjack() {// fa asu sa fie as
             hand=0;
             dealer=0;
             cout<<"How much you want to bet?\n";
+            cout<<"Balance: "<<balance<<endl;
             while (true) {
                 cin>>pot;
                 if (qualityTools.isStringAnInt(pot)) {
@@ -244,6 +245,7 @@ void Casino::Blackjack() {// fa asu sa fie as
                 if (hand>21) {
                     end=true;
                     cout<<"You LOST\n";
+                    balance -=stoi(pot);
                     break;
                 }else {
                     cout<<"Chose what to do:\n";
@@ -263,9 +265,9 @@ void Casino::Blackjack() {// fa asu sa fie as
                         cout<<"Dealer hand: "<<dealer<<"\n";
                         if (dealer>hand&&dealer<=21) {
                             cout<<"You lost!\n";
+                            balance-=stoi(pot);
                         }else if (dealer==hand) {
                             cout<<"Draw\n";
-                            balance+=stoi(pot);
                         }else {
                             cout<<"YOU WIN!!!"<<"+ "<<stoi(pot)*2 <<"\n";
                             balance+=stoi(pot)*2;
