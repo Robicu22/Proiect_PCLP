@@ -3,6 +3,7 @@
 
 ////////Libraries////////////
 #include<string>
+#include<vector>
 
 using namespace std;
 
@@ -12,6 +13,7 @@ class User {
 public:
         int age,money,moneyPerYear,stress, lifeExpentence, health,inteligence;
         string name,ocupation,study,uniSpec;
+        vector<string> degree;
         bool alive;
 
         //////methods///////

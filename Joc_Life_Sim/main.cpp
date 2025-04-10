@@ -27,9 +27,10 @@ void start() {
     user.age = 0;
     user.alive = true;
     user.ocupation="";
-    user.study="kindergarden";
+    user.study="";
     user.uniSpec="";
     user.inteligence=0;
+
     //user.health = 100;
 
     //user.lifeExpentence = user.calculateLifeExpentence()+10000;
@@ -47,34 +48,44 @@ vector<pair<string,int>> activities={pair<string,int>("Gamble",18)
 void activites(int age) {
     cout<<"What would you like to do?\n";
 
-    if (age < 18) {
+    if (false) {
         cout<<"piticule baga banii in masini nu in masinarii\n";
 
     }
     else {
 
-            cout<<"1. Gamble\n"
+            cout<<"0. wait\n"
+                <<"1. Gamble\n"
                 <<"2. Work\n"
-                <<"3. Study\n"
+                <<"3. Get a job"
+                <<"4. Study\n"
                 <<"5. Just die u fucking twat\n"
                 <<"6. Check stats\n";
 
         int choice;
         cin>>choice;
         switch (choice) {
-
+            case 0: {
+                cout<<"You skipeda year!\n";
+                user.age++;
+                break;
+            }
             case 1: {
                casino.ShowGames();
                 break;
             }
             case 2: {
-               jobs.Work(user.ocupation);
+                if (user.ocupation=="") {
+                    cout<<"You dont have a job!";
+                    break;
+                }
+               jobs.Work();
                 break;
             }
-            case 3:
-                if (user.age >= 19|| user.study == "Highschool") {
-                    study.ChoseUniversity();
-                }
+            case 3: {
+                jobs.GetAJob();
+            }
+            case 4:
                 study.StudyHard();
                 break;
 
@@ -90,7 +101,7 @@ void activites(int age) {
 
 }
 int main() {
-    // start();
+        start();
     // cout<<"nenorocirile";
     // while (user.alive) {
     //     activites(user.age);
@@ -105,12 +116,6 @@ int main() {
     //
     // cout<<"Congrats you are dead!";
 
-    string s;
-    int n;
-    cin>>s>>n;
-
-    cout<<tools.curse(s,n);
-
-
+    study.interviewMedical();
     return 0;
 }

@@ -29,5 +29,7 @@ string QualityTools::curse(string s, int n) {
 
         s[ranIndex] = QualityTools::curses[ranCurse];
     }
+
+    return s;
 }
 

@@ -165,13 +165,13 @@ CMakeFiles/Joc_Life_Sim.dir/main.cpp.o: \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc \
- /home/robicu/Proiect_PCLP/Joc_Life_Sim/User.h \
- /home/robicu/Proiect_PCLP/Joc_Life_Sim/Casino.h \
- /home/robicu/Proiect_PCLP/Joc_Life_Sim/Deck_Of_Cards.h \
- /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_uninitialized.h \
+ /home/robicu/Proiect_PCLP/Joc_Life_Sim/User.h /usr/include/c++/13/vector \
+ /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc \
+ /home/robicu/Proiect_PCLP/Joc_Life_Sim/Casino.h \
+ /home/robicu/Proiect_PCLP/Joc_Life_Sim/Deck_Of_Cards.h \
  /home/robicu/Proiect_PCLP/Joc_Life_Sim/Jobs.h \
  /usr/include/c++/13/unordered_map \
  /usr/include/c++/13/bits/unordered_map.h \
