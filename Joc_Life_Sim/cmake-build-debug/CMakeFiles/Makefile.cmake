@@ -36,9 +36,9 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/robicu/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.31/Modules/Platform/Linux.cmake"
   "/home/robicu/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.31/Modules/Platform/UnixPaths.cmake"
   "/home/robicu/Proiect_PCLP/Joc_Life_Sim/CMakeLists.txt"
-  "CMakeFiles/3.31.4/CMakeCCompiler.cmake"
-  "CMakeFiles/3.31.4/CMakeCXXCompiler.cmake"
-  "CMakeFiles/3.31.4/CMakeSystem.cmake"
+  "CMakeFiles/3.31.6/CMakeCCompiler.cmake"
+  "CMakeFiles/3.31.6/CMakeCXXCompiler.cmake"
+  "CMakeFiles/3.31.6/CMakeSystem.cmake"
   )
 
 # The corresponding makefile is:

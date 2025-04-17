@@ -1,11 +1,7 @@
-//
-// Created by robicu on 3/28/25.
-//
-
 #ifndef CASINO_H
 #define CASINO_H
 
-//robicu isi pierde pula la aparate xddddd
+//robicu isi pierde ciocanu la aparate xddddd
 
 class Casino{
 public:
@@ -22,9 +18,11 @@ public:
     void Poker();
     void Slots();
     void Roulet();
+    void Baccarat();
 
     void playAGame(int game);
 };
+
 
 
 

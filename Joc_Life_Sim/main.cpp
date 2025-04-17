@@ -116,6 +116,6 @@ int main() {
     //
     // cout<<"Congrats you are dead!";
 
-    study.interviewMedical();
+    casino.Baccarat();
     return 0;
 }

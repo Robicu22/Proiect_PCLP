@@ -535,6 +535,7 @@ CMakeFiles/Joc_Life_Sim.dir/Deck_Of_Cards.cpp.o: /home/robicu/Proiect_PCLP/Joc_L
   /usr/include/c++/13/bits/stl_tempbuf.h \
   /usr/include/c++/13/bits/stl_uninitialized.h \
   /usr/include/c++/13/bits/stl_vector.h \
+  /usr/include/c++/13/bits/stream_iterator.h \
   /usr/include/c++/13/bits/streambuf.tcc \
   /usr/include/c++/13/bits/streambuf_iterator.h \
   /usr/include/c++/13/bits/string_view.tcc \
@@ -569,6 +570,7 @@ CMakeFiles/Joc_Life_Sim.dir/Deck_Of_Cards.cpp.o: /home/robicu/Proiect_PCLP/Joc_L
   /usr/include/c++/13/iosfwd \
   /usr/include/c++/13/iostream \
   /usr/include/c++/13/istream \
+  /usr/include/c++/13/iterator \
   /usr/include/c++/13/limits \
   /usr/include/c++/13/new \
   /usr/include/c++/13/numbers \
