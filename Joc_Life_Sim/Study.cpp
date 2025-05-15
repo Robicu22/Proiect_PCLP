@@ -77,11 +77,11 @@ void Study::ChoseUniversity() {
         <<"4. Finnance inteligence: 50\n";
 }
 
-void Study::interviewMedical() {
+bool Study::interviewMedical() {
 
     ifstream medicalRead("intrebari/medical.txt");
     vector<pair<string,vector<string>>> interviewMedicalQuestions;
-    for (int i = 0; i < 70; i++) {
+    for (int i = 0; i < 64; i++) {
         string question;
         vector<string> responses;
         getline(medicalRead, question);
@@ -93,45 +93,55 @@ void Study::interviewMedical() {
         interviewMedicalQuestions.push_back(make_pair(question, responses));
     }
 
+    auto rng = default_random_engine{};
+    ranges::shuffle(interviewMedicalQuestions, rng);
 
-    // for (int i = 0; i < 70; i++) {
-    //     cout<<interviewMedicalQuestions[i].first<<endl;
-    //     cout<<interviewMedicalQuestions[i].second[0]<<endl;
-    //     cout<<interviewMedicalQuestions[i].second[1]<<endl;
-    //     cout<<interviewMedicalQuestions[i].second[2]<<endl;
+    // for (int i = 0; i < interviewMedicalQuestions.size(); i++) {
+    //     cout<<interviewMedicalQuestions[i].first;
+    //     cout<<interviewMedicalQuestions[i].second[0];
+    //     cout<<interviewMedicalQuestions[i].second[1];
+    //     cout<<interviewMedicalQuestions[i].second[2];
     //     cout<<interviewMedicalQuestions[i].second[3]<<endl;
+    //     cout<<i<<endl;
     // }
 
 
     medicalRead.close();
-    auto rng = default_random_engine{};
-    ranges::shuffle(interviewMedicalQuestions, rng);
+
+
 
     int correctResponses = 0, cursingLevel = 0;
 
     if (user.inteligence < Study::inteligent_req["Medical"]) {
         cursingLevel = Study::inteligent_req["Medical"]-user.inteligence;
     }
-
+    int goodResponses = 0, minimum = 26;
     for (int i = 0; i < 30; i++) {
         string question;
         question.append(interviewMedicalQuestions[i].first, 0, interviewMedicalQuestions[i].first.size()-2);
         char correct = interviewMedicalQuestions[i].first[interviewMedicalQuestions[i].first.size() - 1];
-        question = qualityTools.curse(question, cursingLevel);
+        //question = qualityTools.curse(question, cursingLevel);
         cout<<i+1<<": "<<question<<endl;
         cout<<interviewMedicalQuestions[i].second[0]<<endl;
         cout<<interviewMedicalQuestions[i].second[1]<<endl;
         cout<<interviewMedicalQuestions[i].second[2]<<endl;
         cout<<interviewMedicalQuestions[i].second[3]<<endl;
-        cout<<"Psst raspunsul corect este "<< correct<<endl;
+       // cout<<"Psst raspunsul corect este "<< correct<<endl;
         char response;
         cin>>response;
 
         if (response == correct) {
             cout<<"Ai raspuns bine rege \n";
+            goodResponses++;
         }
         else
             cout<<"Esti fraier \n";
     }
 
+    if (goodResponses >= minimum)
+        cout<<"Ai trecut boss\n";
+        return true;
+
+    cout<<"Ai picat esti prost \n";
+    return false;
 }

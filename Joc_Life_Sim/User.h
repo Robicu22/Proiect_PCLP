@@ -14,6 +14,7 @@ public:
         int age,money,moneyPerYear,stress, lifeExpentence, health,inteligence;
         string name,ocupation,study,uniSpec;
         vector<string> degree;
+        vector<string> unlockedActivities;
         bool alive;
 
         //////methods///////

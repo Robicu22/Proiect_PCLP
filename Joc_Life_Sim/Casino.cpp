@@ -645,4 +645,35 @@ void Casino::Roulet() {
         Casino::Roulet();
     }
 }
+int Slots(int bet)
+{
+    int win=0,winnings=0,choice=1;
+    do
+    {
+        //pacane aici
+
+        if (win>0){cout<<"You won "<<win<<endl;}else{cout<<"You lost "<<bet<<endl;}
+        winnings+=win-bet;
+        win=0;
+        cout<<"0.Exit\n"
+            <<"1.Play again\n";
+        cout<<"You have made "<<winnings<<endl;
+        cout<<"The bet is "<<bet<<endl;
+        cin>>choice;
+        //qualityTools.Clear();
+    }while (choice);
+    return winnings;
+}
+void Casino::SlotsStart()
+{
+    int choice,win;
+    cout<<"How much you wanna bet?\n";
+    cout<<"Your balance: \n"<<balance;
+    cin>>choice;
+    if (choice)
+    {
+        balance -=choice;
+        win=Slots(choice);
+    }
+}
 

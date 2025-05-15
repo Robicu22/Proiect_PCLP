@@ -1,4 +1,4 @@
 /home/robicu/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "Unix Makefiles" -S /home/robicu/Proiect_PCLP/Joc_Life_Sim -B /home/robicu/Proiect_PCLP/Joc_Life_Sim/cmake-build-debug
--- Configuring done (0.1s)
+-- Configuring done (0.0s)
 -- Generating done (0.0s)
 -- Build files have been written to: /home/robicu/Proiect_PCLP/Joc_Life_Sim/cmake-build-debug

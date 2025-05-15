@@ -1,6 +1,3 @@
-//
-// Created by robicu on 3/28/25.
-//
 #include "QualityTools.h"
 
 #include <random>
@@ -17,6 +14,11 @@ bool QualityTools::isStringAnInt(string s) {
     }
 
     return true;
+}
+
+void Clear()
+{
+    cout<<"\033[2J\033[1;1H";
 }
 
 string QualityTools::curse(string s, int n) {

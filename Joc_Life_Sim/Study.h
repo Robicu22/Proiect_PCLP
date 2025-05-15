@@ -16,7 +16,7 @@ class Study {
 
     void StudyHard();
     void ChoseUniversity();
-    void interviewMedical();
+    bool interviewMedical();
 };
 
 

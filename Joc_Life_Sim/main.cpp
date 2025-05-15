@@ -1,6 +1,6 @@
 #include <algorithm>
 #include <iostream>
-
+#include <cstdlib>
 
 #include "User.h"
 #include "Casino.h"
@@ -30,6 +30,7 @@ void start() {
     user.study="";
     user.uniSpec="";
     user.inteligence=0;
+    user.unlockedActivities.push_back("Kind");   user.unlockedActivities.push_back("Wait");   user.unlockedActivities.push_back("Sleep");
 
     //user.health = 100;
 
@@ -116,6 +117,7 @@ int main() {
     //
     // cout<<"Congrats you are dead!";
 
-    casino.Baccarat();
+    study.interviewMedical();
+
     return 0;
 }

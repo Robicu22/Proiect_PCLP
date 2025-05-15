@@ -14,6 +14,7 @@ public:
     string curses = "!@#$%^&*?";
     string curse(string s, int n);
     bool isStringAnInt(string s);
+    void Clear();
 };
 
 

@@ -16,7 +16,7 @@ public:
     void Dices();
     void Findjoker();
     void Poker();
-    void Slots();
+    void SlotsStart();
     void Roulet();
     void Baccarat();
 
