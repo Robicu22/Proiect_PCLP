@@ -11,16 +11,18 @@ using namespace std;
 
 class User {
 public:
-        int age,money,moneyPerYear,stress, lifeExpentence, health,inteligence;
+        int age,money,moneyPerYear,stress, lifeExpentence, health,inteligence, kids, sanity;
         string name,ocupation,study,uniSpec;
         vector<string> degree;
         vector<string> unlockedActivities;
-        bool alive;
+        bool alive, married;
 
         //////methods///////
         void ShowPlayerStats();
         void KillYourself(bool alive);
         int calculateLifeExpentence();
+
+        bool checkIfYouWannaKys();
 };
 
 

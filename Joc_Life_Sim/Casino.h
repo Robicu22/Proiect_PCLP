@@ -5,7 +5,7 @@
 
 class Casino{
 public:
-    int balance=1000;
+    int balance=0;
     ///////methods
     void ShowGames();
     void Depozit();
@@ -20,6 +20,7 @@ public:
     void Roulet();
     void Baccarat();
 
+    void bbnoSS(int balance);
     void playAGame(int game);
 };
 

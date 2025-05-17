@@ -8,6 +8,7 @@
 #include "Jobs.h"
 #include "Study.h"
 #include "QualityTools.h"
+#include "Story.h"
 
 using namespace std;
 
@@ -17,13 +18,15 @@ Casino casino;
 Deck_Of_Cards deck;
 Study study;
 QualityTools tools;
+Story story;
+
 int currentMonth = 0;
 void start() {
     cout<<"You just were born! Congrats welcome to the real world little one!\nSoon you will understand the real struggles of the humankind:) \n";
     cout<<"First please enter your name:\n";
     getline(cin, user.name);
     user.moneyPerYear= 0;
-    user.money = 0;
+    user.money = 10000;
     user.age = 0;
     user.alive = true;
     user.ocupation="";
@@ -31,11 +34,15 @@ void start() {
     user.uniSpec="";
     user.inteligence=0;
     user.unlockedActivities.push_back("Kind");   user.unlockedActivities.push_back("Wait");   user.unlockedActivities.push_back("Sleep");
+    user.kids = 0;
+    user.married = false;
+    user.stress = 0;
+    user.sanity = 100;
 
     //user.health = 100;
 
     //user.lifeExpentence = user.calculateLifeExpentence()+10000;
-    cout<<"Hello ";
+    cout<<"Hello \n";
     user.ShowPlayerStats();
 }
 
@@ -50,19 +57,18 @@ vector<pair<string,int>> activities={pair<string,int>("Gamble",18)
 ;
 int main() {
         start();
-    // cout<<"nenorocirile";
-    // while (user.alive) {
-    //     activites(user.age);
-    //
-    //
-    //     //user.lifeExpentence = user.calculateLifeExpentence();
-    //     if (user.age >= 60) {
-    //         user.alive = false;
-    //         cout<<"You turned 60! You are too old to live.\n";
-    //     }
-    // }
-    //
-    // cout<<"Congrats you are dead!";
+    while (user.alive) {
+        story.Activity();
+
+
+        //user.lifeExpentence = user.calculateLifeExpentence();
+        if (user.age >= 60) {
+            user.alive = false;
+            cout<<"You turned 60! You are too old to live.\n";
+        }
+    }
+
+    cout<<"Congrats you are dead!";
 
 
     return 0;
