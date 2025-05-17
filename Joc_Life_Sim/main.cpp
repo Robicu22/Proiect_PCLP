@@ -39,68 +39,15 @@ void start() {
     user.ShowPlayerStats();
 }
 
+
+
 vector<pair<string,int>> activities={pair<string,int>("Gamble",18)
     ,pair<string,int>("Gamble",18)
     ,pair<string,int>(user.ocupation,10)
     ,pair<string,int>(user.study,5)
     ,pair<string,int>("Sleep",18)
-    ,pair<string,int>("KYS",user.stress)};
-
-void activites(int age) {
-    cout<<"What would you like to do?\n";
-
-    if (false) {
-        cout<<"piticule baga banii in masini nu in masinarii\n";
-
-    }
-    else {
-
-            cout<<"0. wait\n"
-                <<"1. Gamble\n"
-                <<"2. Work\n"
-                <<"3. Get a job"
-                <<"4. Study\n"
-                <<"5. Just die u fucking twat\n"
-                <<"6. Check stats\n";
-
-        int choice;
-        cin>>choice;
-        switch (choice) {
-            case 0: {
-                cout<<"You skipeda year!\n";
-                user.age++;
-                break;
-            }
-            case 1: {
-               casino.ShowGames();
-                break;
-            }
-            case 2: {
-                if (user.ocupation=="") {
-                    cout<<"You dont have a job!";
-                    break;
-                }
-               jobs.Work();
-                break;
-            }
-            case 3: {
-                jobs.GetAJob();
-            }
-            case 4:
-                study.StudyHard();
-                break;
-
-            case 5: {
-                user.alive = false;
-                break;
-            }
-            case 6: {
-              user.ShowPlayerStats();
-            }
-        }
-    }
-
-}
+    ,pair<string,int>("KYS",user.stress)}
+;
 int main() {
         start();
     // cout<<"nenorocirile";
@@ -117,7 +64,6 @@ int main() {
     //
     // cout<<"Congrats you are dead!";
 
-    study.interviewMedical();
 
     return 0;
 }

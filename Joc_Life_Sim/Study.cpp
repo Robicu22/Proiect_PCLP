@@ -115,7 +115,7 @@ bool Study::interviewMedical() {
     if (user.inteligence < Study::inteligent_req["Medical"]) {
         cursingLevel = Study::inteligent_req["Medical"]-user.inteligence;
     }
-    int goodResponses = 0, minimum = 26;
+    int goodResponses = 0, minimum = 21;
     for (int i = 0; i < 30; i++) {
         string question;
         question.append(interviewMedicalQuestions[i].first, 0, interviewMedicalQuestions[i].first.size()-2);

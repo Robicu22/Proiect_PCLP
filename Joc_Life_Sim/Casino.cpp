@@ -13,26 +13,41 @@
 
 using namespace std;
 
+extern Casino casino;
 extern User user;
 QualityTools qualityTools;
 
-void Casino::ShowGames() {
-    cout<<"Balance: "<<balance<<"RON"<<endl;
-    cout<<"If you want to depozit/withdraw\n"
-        <<"10. Depozit\n"
-        <<"11. Withdraw\n";
-    cout<<"What you want to play?\n";
-    cout<<"1. Blackjack\n"
-        <<"2. Dices\n"
-        <<"3. Find the Joker\n"
-        <<"4. Poker\n"
-        <<"5. Slots\n"
-        <<"6. Roulet\n";
 
+void Casino::ShowGames() {
     int game;
-    cin>>game;
-    playAGame(game);
+    while (game != 12) {
+        cout<<"Balance: "<<balance<<"RON"<<endl;
+        cout<<"If you want to depozit/withdraw\n"
+            <<"10. Depozit\n"
+            <<"11. Withdraw\n"
+            <<"12. Leave\n";
+        cout<<"What do you want to play?\n";
+        cout<<"1. Blackjack\n"
+            <<"2. Dices\n"
+            <<"3. Find the Joker\n"
+            <<"4. Poker\n"
+            <<"5. Slots\n"
+            <<"6. Roulet\n";
+
+
+        cin>>game;
+        if (game > 0 && game < 7) {
+            if (balance == 0) {
+                game = 1000;
+                cout<<"You can't play with balance 0 brokie";
+            }
+
+        }
+
+        playAGame(game);
+    }
 }
+
 
 void Casino::playAGame(int game) {
     switch (game) {
@@ -52,9 +67,15 @@ void Casino::playAGame(int game) {
             Casino::Withdraw();
             break;
         }
-
+        case 12: {
+            return;
+            break;
+        }
+        default:
+            break;
     }
 }
+
 void Casino::Withdraw() {
         cout<<"How much you want to withdraw?\n";
         cout<<"Balance= " << balance <<"\n";
@@ -76,7 +97,9 @@ void Casino::Withdraw() {
             user.money += choice;
             balance-=choice;
         }
+    Casino::ShowGames();
 }
+
 void Casino::Depozit() {
     cout<<"How much you want to depozit?\n";
     cout<<"Balance= " << user.money <<"\n";
@@ -98,6 +121,8 @@ void Casino::Depozit() {
         balance += choice;
         user.money -= choice;
     }
+
+    Casino::ShowGames();
 }
 
 void Casino::Dices() {
@@ -179,13 +204,19 @@ void Casino::Dices() {
         cin>>n;
 
 
-
         balance += win;
-        cout<<"Your balance is: "<<balance<<" RON \n";
-        cout<<"Do you want to play again? (Type the option number)\n"
-            <<"1. Play again\n"
-            <<"2. Exit\n";
-        cin>>choice;
+        if (balance > 0) {
+            cout<<"Your balance is: "<<balance<<" RON \n";
+            cout<<"Do you want to play again? (Type the option number)\n"
+                <<"1. Play again\n"
+                <<"2. Exit\n";
+            cin>>choice;
+        }
+        else {
+            cout<<"Please depozit more chips!";
+            choice = 0;
+        }
+
     }
 
 }
@@ -279,16 +310,23 @@ void Casino::Blackjack() {// fa asu sa fie as
                 }
             }
 
-            cout<<"Do you want to play again? \n"
-                <<"1. Play again\n"
-                <<"2. Exit\n";
-            cin>>choice;
+            if (balance > 0) {
+                cout<<"Your balance is: "<<balance<<" RON \n";
+                cout<<"Do you want to play again? (Type the option number)\n"
+                    <<"1. Play again\n"
+                    <<"2. Exit\n";
+                cin>>choice;
+            }
+            else {
+                cout<<"Please depozit more chips!";
+                choice = 2;
+            }
         }
         if (choice==2) {
             break;
         }
     }
-    cout<<"Your balance is "<<balance<<"\n";
+    
 }
 
 void Casino::Baccarat() {
@@ -356,7 +394,7 @@ void Casino::Baccarat() {
 
         cout<<"Player's total: "<<playerTotal%10<<"       "<<"Banker's total: "<<bankerTotal%10<<endl;
 
-        sleep(2);
+        _sleep(500);
 
         player.push_back(deck.deck[0].second);
         deck.deck.erase(deck.deck.begin());
@@ -368,7 +406,7 @@ void Casino::Baccarat() {
         cout<<"Player's hand: "<<player[0]<<" "<< player[1]<<"       "<<"Banker's hand: "<<banker[0]<<" "<<banker[1]<<endl;
 
         cout<<"Player's total: "<<playerTotal%10<<"       "<<"Banker's total: "<<bankerTotal%10<<endl;
-        sleep(2);
+        _sleep(500);
         int playersThirdCard = -1;
 
         //A treia carte a jucatorului
@@ -382,7 +420,7 @@ void Casino::Baccarat() {
                 bankerTotal = accumulate(banker.begin(), banker.end(), 0);
                 cout<<"Player's hand: "<<player[0]<<" "<< player[1]<<" "<<player[2]<<"       "<<"Banker's hand: "<<banker[0]<<" "<<banker[1]<<endl;
                 cout<<"Player's total: "<<playerTotal%10<<"       "<<"Banker's total: "<<bankerTotal%10<<endl;
-                sleep(1);
+                _sleep(300);
             }
         }
         //A treia carte a bancherului
@@ -442,7 +480,7 @@ void Casino::Baccarat() {
         }
 
 
-        sleep(2);
+        _sleep(500);
 
         playerTotal = accumulate(player.begin(), player.end(), 0);
         bankerTotal = accumulate(banker.begin(), banker.end(), 0);
@@ -492,10 +530,19 @@ void Casino::Baccarat() {
 
         balance += win;
 
-        cout<<"Do you want to play again? (Type the option number)\n"
-         <<"1. Play again\n"
-         <<"2. Exit\n";
-        cin>>choice;
+        if (balance > 0) {
+            cout<<"Your balance is: "<<balance<<" RON \n";
+            cout<<"Do you want to play again? (Type the option number)\n"
+                <<"1. Play again\n"
+                <<"2. Exit\n";
+            cin>>choice;
+        }
+        else {
+            cout<<"Please depozit more chips!";
+            choice = 0;
+        }
+
+        
     }
 
 
@@ -520,47 +567,48 @@ void Rlose(auto draw,int pot){
 void RWait()
 {
     cout<<"It is spining\n";
-    sleep(1);
+    _sleep(300);
     cout<<"..\n";
-    sleep(1);
+    _sleep(300);
     cout<<"....\n";
-    sleep(1);
+    _sleep(300);
     cout<<"......\n";
-    sleep(1);
+    _sleep(300);
 }
 
 void Casino::Roulet() {
     cout<<"Hello wellcome to the Roulet!!\n";
     string bet;
-    int pot=0;
-    while (true) {
-        cout<<"How much do you want to bet?\n";
-        cout<<"Balance: "<<balance<<endl;
-        cin>>bet;
-        if (qualityTools.isStringAnInt(bet)) {
-            if (stoi(bet) > balance)
-                cout<<"You don't have that much! Try again\n";
-            else if (stoi(bet) > 0)
-                break;
+    int pot=0, choice = 1;
+    while (choice == 1) {
+        while (true) {
+            cout<<"How much do you want to bet?\n";
+            cout<<"Balance: "<<balance<<endl;
+            cin>>bet;
+            if (qualityTools.isStringAnInt(bet)) {
+                if (stoi(bet) > balance)
+                    cout<<"You don't have that much! Try again\n";
+                else if (stoi(bet) > 0)
+                    break;
+                else
+                    cout<<"The bet is invalid, try again!\n";
+            }
             else
                 cout<<"The bet is invalid, try again!\n";
         }
-        else
-            cout<<"The bet is invalid, try again!\n";
-    }
-    balance -= stoi(bet);
-    pot = stoi(bet);
-    cout<<"Great now what do you want to bet on \n "
-          "1.Black or Red or Green\n"
-          "2.A number\n"
-          "3.Odd or Even\n";
-    cout<<"Write bellow the choice\n";
-    int choice,secChoice;
-    cin>>choice;
-    pair<int,string> draw = RunRoulet();
-    switch (choice)
-    {
-        case 1:
+        balance -= stoi(bet);
+        pot = stoi(bet);
+        cout<<"Great now what do you want to bet on \n "
+              "1.Black or Red or Green\n"
+              "2.A number\n"
+              "3.Odd or Even\n";
+        cout<<"Write bellow the choice\n";
+        int choices,secChoice;
+        cin>>choices;
+        pair<int,string> draw = RunRoulet();
+        switch (choices)
+        {
+            case 1:
             {
                 cout<<"1.Black for a 2x on the bet\n"
                       "2.Red for a 2x on the bet\n"
@@ -601,23 +649,23 @@ void Casino::Roulet() {
                 }
                 break;
             }
-        case 2:
-        {
-                                                               cout<<"Chose a number to bet between 0 and 36 for a 36x bet\n";
-                                                               int numChoice;
-                                                               cin>>numChoice;
-                                                               RWait();
-                                                               if (draw.first==numChoice)
-                                                               {
-                                                                   RWin(draw,pot);
-                                                                   balance=pot*36;
-                                                               }else
-                                                               {
-                                                                   Rlose(draw,pot);
-                                                               }
-                                                                break;
-        }
-        case 3:
+            case 2:
+            {
+                cout<<"Chose a number to bet between 0 and 36 for a 36x bet\n";
+                int numChoice;
+                cin>>numChoice;
+                RWait();
+                if (draw.first==numChoice)
+                {
+                    RWin(draw,pot);
+                    balance=pot*36;
+                }else
+                {
+                    Rlose(draw,pot);
+                }
+                break;
+            }
+            case 3:
             {
                 cout<<"Chose if the number it lands on is either Odd or Even:\n1.Odd for a 2x bet\n2.Even for a 2x bet\n";
                 int evenChoice;
@@ -637,12 +685,18 @@ void Casino::Roulet() {
                 }
                 break;
             }
-    }
-    cout<<"Do you want to play again?\n1.Play again!\n2.Exit\n";
-    cin>>choice;
-    if (choice==1)
-    {
-        Casino::Roulet();
+        }
+        if (balance > 0) {
+            cout<<"Your balance is: "<<balance<<" RON \n";
+            cout<<"Do you want to play again? (Type the option number)\n"
+                <<"1. Play again\n"
+                <<"2. Exit\n";
+            cin>>choice;
+        }
+        else {
+            cout<<"Please depozit more chips!";
+            choice = 0;
+        }
     }
 }
 int Slots(int bet)
@@ -662,6 +716,7 @@ int Slots(int bet)
         cin>>choice;
         //qualityTools.Clear();
     }while (choice);
+
     return winnings;
 }
 void Casino::SlotsStart()
