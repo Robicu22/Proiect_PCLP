@@ -15,10 +15,10 @@ void Jobs::Work() {
         while (true) {
            user.age = user.age + 1;
             user.money += Jobs::salaries[job];
-            user.stress += Jobs::sterssLevelPerWork[job];
+            user.sanity -= 3;
             cout<<"You earned "<< Jobs::salaries[job]<< " RON this year! \n"
                 <<"You now have "<<user.money<<" RON'\n"
-                <<"Your stress level is "<<user.stress<<endl
+                <<"Your sanity level is "<<user.sanity<<endl
                 <<"Do you wish to work for another year? Type yes or no \n";
             string answer;
             while (true) {

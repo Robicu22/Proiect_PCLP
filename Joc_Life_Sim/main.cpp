@@ -8,6 +8,7 @@
 #include "Jobs.h"
 #include "Study.h"
 #include "QualityTools.h"
+#include "Shop.h"
 #include "Story.h"
 
 using namespace std;
@@ -19,6 +20,7 @@ Deck_Of_Cards deck;
 Study study;
 QualityTools tools;
 Story story;
+Shop shop;
 
 int currentMonth = 0;
 void start() {
@@ -26,7 +28,7 @@ void start() {
     cout<<"First please enter your name:\n";
     getline(cin, user.name);
     user.moneyPerYear= 0;
-    user.money = 10000;
+    user.money = 0;
     user.age = 0;
     user.alive = true;
     user.ocupation="";
@@ -48,16 +50,10 @@ void start() {
 
 
 
-vector<pair<string,int>> activities={pair<string,int>("Gamble",18)
-    ,pair<string,int>("Gamble",18)
-    ,pair<string,int>(user.ocupation,10)
-    ,pair<string,int>(user.study,5)
-    ,pair<string,int>("Sleep",18)
-    ,pair<string,int>("KYS",user.stress)}
-;
+
 int main() {
-    casino.SlotsStart();
-        start();
+    start();
+
     while (user.alive) {
         story.Activity();
 

@@ -1,8 +1,9 @@
 #include "Story.h"
 #include "Casino.h"
 #include "User.h"
-#include"Jobs.h"
-#include"Study.h"
+#include "Jobs.h"
+#include "Study.h"
+#include "Shop.h"
 
 #include <iostream>
 
@@ -13,6 +14,7 @@ extern  Casino casino;
 extern User user;
 extern Jobs jobs;
 extern Study study;
+extern Shop shop;
 
 /*vector<int> Make_Activities(unordered_map<string,int> pos) {
     vector<int> res;
@@ -22,10 +24,33 @@ extern Study study;
     return res;
 
 }*/
+void Story::ActivityUpdate() {
+
+    switch (user.age) {
+        case 4:
+            Posible_Activites[0].first = 0;
+            Posible_Activites[1].first = 1; //unlocks studying
+            break;
+        case 18:
+            Posible_Activites[2].first = 1;
+            Posible_Activites[3].first = 1;
+            Posible_Activites[4].first = 1;
+            Posible_Activites[5].first = 1;
+            break;
+        case 19:
+            if (!Story::everBeenToUni) {
+                Posible_Activites[7].first = 1;
+            }
+            break;
+        default:
+            break;
+    }
+}
 
 void Story::Activity() {
+    ActivityUpdate();
     if (!user.alive)return;
-    int choice;
+    string choice;
     cout<<"\nWhat would you like to do?\n";
     for (int i=0;i<Posible_Activites.size();i++) {
         if (Posible_Activites[i].first == 1) {
@@ -33,14 +58,21 @@ void Story::Activity() {
         }
     }
 
-    cin>>choice;
+    while (true) {
+        cin>>choice;
+        if (Posible_Activites[stoi(choice)].first != 1 || stoi(choice) > Posible_Activites.size()) {
+            cout<<"Please enter a valid option!";
+        }
+        else
+            break;
 
-    switch(choice) {
+    }
+
+    switch(stoi(choice)) {
         case 0:
             if (user.checkIfYouWannaKys()) {Story::Activity();return;}
-            cout<<"You skipeda year!\n";
+            cout<<"You skiped a year!\n";
             user.age++;
-            user.inteligence++;
             break;
         case 1:
             if (user.checkIfYouWannaKys()) {Story::Activity();return;}
@@ -48,20 +80,45 @@ void Story::Activity() {
             break;
         case 2:
             if (user.checkIfYouWannaKys()) {Story::Activity();return;}
-            if (user.ocupation=="") {
-                cout<<"You dont have a job!";
-                break;
+            if (user.ocupation!="") {
+                jobs.Work();
             }
-            jobs.Work();
+            else {
+                string answer;
+                cout<<"You dont have a job!\n";
+                cout<<"Would you like to work as a barista? Type yes or no\n";
+                while (true) {
+                    cin>>answer;
+                    if (answer == "yes") {
+                        user.ocupation = "Barista";
+                        break;
+                    }
+                    else if (answer == "no") {
+                        break;
+                    }
+                    else
+                        cout<<"Please enter a valid option\n";
+                }
+            }
+
             break;
         case 3:
+            shop.Store();
+            break;
+        case 4:
+            //inventory
+            break;
+        case 5:
             if (user.checkIfYouWannaKys()) {Story::Activity();return;}
             casino.ShowGames();
             break;
-        case 4:
-        case 5:
         case 6:
+            user.ShowPlayerStats();
+            break;
         case 7:
+            if (user.checkIfYouWannaKys()) {Story::Activity();return;}
+            study.ChooseUniversity();
+            break;
         case 8:
         case 9:
         case 10:
@@ -73,6 +130,8 @@ void Story::Activity() {
         default:cout<<"Wrong input!!!\n";break;
     }
 }
+
+
 
 /*
  0: skip year

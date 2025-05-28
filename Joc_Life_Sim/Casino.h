@@ -8,14 +8,12 @@ public:
     int balance=0;
     ///////methods
     void ShowGames();
-    void Depozit();
+    void Deposit();
     void Withdraw();
 
     //Casino games
     void Blackjack();
     void Dices();
-    void Findjoker();
-    void Poker();
     void SlotsStart();
     void Roulet();
     void Baccarat();

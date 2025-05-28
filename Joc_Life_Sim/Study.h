@@ -7,15 +7,15 @@ using namespace std;
 
 class Study {
     public:
-    unordered_map<string,int> studyAt={{"kindergarden",4},{"school",7},{"highschool",15},{"university",19}};//<name,age>
+    unordered_map<string,int> studyAt={{"Kindergarden",4},{"School",7},{"Highschool",15},{"Homeschool", 19},{"University",19}};//<name,age>
     unordered_map<string,int> uniSpec ={{"engineer",8},{"medical",10},{"law",7},{"finnance",3}};//<name,inteligence>
     unordered_map<string,int> sterssLevelPerSession ={{"engineer",15},{"medical",22},{"law.txt",10},{"finnance",-5}};//<name,stress>
-    unordered_map<string,int> inteligent_req={{"Engineering",80},{"Medical",79}};//<name,intel>
+    unordered_map<string,int> inteligent_req={{"Engineering",80},{"Medical", 40}};//<name,intel>
 
-    int kind=0,school=0,high=0,uni=0;
+    int kind=0,school=0,high=0,uni=0,intGain=0;
 
     void StudyHard();
-    void ChoseUniversity();
+    void ChooseUniversity();
     bool interviewMedical();
 };
 

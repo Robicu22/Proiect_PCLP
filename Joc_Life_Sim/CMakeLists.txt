@@ -17,4 +17,7 @@ add_executable(Joc_Life_Sim main.cpp
         Study.cpp
         Study.h
         Story.cpp
-        Story.h)
+        Story.h
+        Shop.cpp
+        Shop.h
+)

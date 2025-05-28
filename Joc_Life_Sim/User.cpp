@@ -11,7 +11,7 @@ void User::ShowPlayerStats() {
     cout<<"Your age is: "<<age<<endl;
     cout<<"Your balance: "<<money<<"RON"<<endl;
     cout<<"You make per month: "<<moneyPerYear<<"RON"<<endl;
-    cout<<"Your stress level: "<<stress<<endl;
+    cout<<"Your sanity is at: "<<sanity<<"%"<<endl;
     cout<<"Your ocupation is: "<<ocupation<<endl;
     cout<<"You study at: "<<study<<endl;
     cout<<"Your inteligence is: "<<inteligence<<endl;
