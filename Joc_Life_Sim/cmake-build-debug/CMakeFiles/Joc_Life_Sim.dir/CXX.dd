@@ -1,0 +1,19 @@
+ninja_dyndep_version = 1.0
+build CMakeFiles/Joc_Life_Sim.dir/main.cpp.o: dyndep
+
+build CMakeFiles/Joc_Life_Sim.dir/User.cpp.o: dyndep
+
+build CMakeFiles/Joc_Life_Sim.dir/Casino.cpp.o: dyndep
+
+build CMakeFiles/Joc_Life_Sim.dir/Deck_Of_Cards.cpp.o: dyndep
+
+build CMakeFiles/Joc_Life_Sim.dir/QualityTools.cpp.o: dyndep
+
+build CMakeFiles/Joc_Life_Sim.dir/Jobs.cpp.o: dyndep
+
+build CMakeFiles/Joc_Life_Sim.dir/Study.cpp.o: dyndep
+
+build CMakeFiles/Joc_Life_Sim.dir/Story.cpp.o: dyndep
+
+build CMakeFiles/Joc_Life_Sim.dir/Shop.cpp.o: dyndep
+

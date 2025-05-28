@@ -1,0 +1,67 @@
+{
+	"bmi-installation" : null,
+	"compiler-frontend-variant" : "GNU",
+	"compiler-id" : "GNU",
+	"compiler-simulate-id" : "",
+	"config" : "Debug",
+	"cxx-modules" : {},
+	"database-info" : null,
+	"dir-cur-bld" : "/home/costijk/CLionProjects/Proiect_PCLP/Joc_Life_Sim/cmake-build-debug",
+	"dir-cur-src" : "/home/costijk/CLionProjects/Proiect_PCLP/Joc_Life_Sim",
+	"dir-top-bld" : "/home/costijk/CLionProjects/Proiect_PCLP/Joc_Life_Sim/cmake-build-debug",
+	"dir-top-src" : "/home/costijk/CLionProjects/Proiect_PCLP/Joc_Life_Sim",
+	"exports" : [],
+	"forward-modules-from-target-dirs" : [],
+	"include-dirs" : [],
+	"language" : "CXX",
+	"linked-target-dirs" : [],
+	"module-dir" : "/home/costijk/CLionProjects/Proiect_PCLP/Joc_Life_Sim/cmake-build-debug/CMakeFiles/Joc_Life_Sim.dir",
+	"sources" : 
+	{
+		"CMakeFiles/Joc_Life_Sim.dir/Casino.cpp.o" : 
+		{
+			"language" : "CXX",
+			"source" : "/home/costijk/CLionProjects/Proiect_PCLP/Joc_Life_Sim/Casino.cpp"
+		},
+		"CMakeFiles/Joc_Life_Sim.dir/Deck_Of_Cards.cpp.o" : 
+		{
+			"language" : "CXX",
+			"source" : "/home/costijk/CLionProjects/Proiect_PCLP/Joc_Life_Sim/Deck_Of_Cards.cpp"
+		},
+		"CMakeFiles/Joc_Life_Sim.dir/Jobs.cpp.o" : 
+		{
+			"language" : "CXX",
+			"source" : "/home/costijk/CLionProjects/Proiect_PCLP/Joc_Life_Sim/Jobs.cpp"
+		},
+		"CMakeFiles/Joc_Life_Sim.dir/QualityTools.cpp.o" : 
+		{
+			"language" : "CXX",
+			"source" : "/home/costijk/CLionProjects/Proiect_PCLP/Joc_Life_Sim/QualityTools.cpp"
+		},
+		"CMakeFiles/Joc_Life_Sim.dir/Shop.cpp.o" : 
+		{
+			"language" : "CXX",
+			"source" : "/home/costijk/CLionProjects/Proiect_PCLP/Joc_Life_Sim/Shop.cpp"
+		},
+		"CMakeFiles/Joc_Life_Sim.dir/Story.cpp.o" : 
+		{
+			"language" : "CXX",
+			"source" : "/home/costijk/CLionProjects/Proiect_PCLP/Joc_Life_Sim/Story.cpp"
+		},
+		"CMakeFiles/Joc_Life_Sim.dir/Study.cpp.o" : 
+		{
+			"language" : "CXX",
+			"source" : "/home/costijk/CLionProjects/Proiect_PCLP/Joc_Life_Sim/Study.cpp"
+		},
+		"CMakeFiles/Joc_Life_Sim.dir/User.cpp.o" : 
+		{
+			"language" : "CXX",
+			"source" : "/home/costijk/CLionProjects/Proiect_PCLP/Joc_Life_Sim/User.cpp"
+		},
+		"CMakeFiles/Joc_Life_Sim.dir/main.cpp.o" : 
+		{
+			"language" : "CXX",
+			"source" : "/home/costijk/CLionProjects/Proiect_PCLP/Joc_Life_Sim/main.cpp"
+		}
+	}
+}
