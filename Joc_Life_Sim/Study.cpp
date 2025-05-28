@@ -71,10 +71,10 @@ void Study::ChoseUniversity() {
     }
     cout<<"Chose one option if you have the inteligence for it: \n";
     cout<<"inteligence: "<<user.inteligence<<"\n";
-    cout<<"1. Engineer inteligence: 60\n"
-        <<"2. Medical  inteligence: 70\n"
-        <<"3. Law      inteligence: 65\n"
-        <<"4. Finnance inteligence: 50\n";
+    cout
+       <<"2. Medical  inteligence: 70\n"
+
+
 }
 
 bool Study::interviewMedical() {
