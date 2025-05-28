@@ -56,6 +56,7 @@ vector<pair<string,int>> activities={pair<string,int>("Gamble",18)
     ,pair<string,int>("KYS",user.stress)}
 ;
 int main() {
+    casino.SlotsStart();
         start();
     while (user.alive) {
         story.Activity();

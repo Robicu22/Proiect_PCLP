@@ -699,13 +699,51 @@ void Casino::Roulet() {
         }
     }
 }
+vector<vector<int>> RandomHand(vector<vector<int>> hand) {
+    srand(time(0));
+    for (int i = 0; i < hand.size(); i++) {
+        for (int j = 0; j < hand[i].size(); j++) {
+            hand[i][j] = rand()%6+1;
+        }
+    }
+    return hand;
+}
+
+int ShowSlots(vector<vector<int>> hand,int bet) {
+    int win=0;
+    vector<vector<int>> wH={{0,0,0,1,0,2},{1,0,1,1,1,2},{2,0,2,1,2,2},{0,0,1,1,2,2},{2,0,1,1,0,2}};
+    cout<<"\n\n\n\n\n\n\nYour slots are:\n";
+    for (int i = 0; i < hand.size(); i++) {
+        for (int j = 0; j < hand[i].size(); j++) {
+            cout<<hand[i][j]<<"  ";
+        }
+        cout<<"\n";
+    }
+
+    for (int i = 0; i < wH.size(); i++) {
+
+            if (hand[wH[i][0]][wH[i][1]]==hand[wH[i][2]][wH[i][3]]&&hand[wH[i][2]][wH[i][3]]==hand[wH[i][4]][wH[i][5]]) {
+                win=hand[wH[i][0]][wH[i][1]]*bet;
+            }
+
+    }
+    if (win) {
+        cout<<"You won "<<win<<endl;
+    }else {
+        cout<<"You hit nothing "<<endl;
+    }
+
+    return win;
+}
 int Slots(int bet)
 {
+    vector<vector<int>> hand={{0,0,0},{0,0,0},{0,0,0}};
     int win=0,winnings=0,choice=1;
     do
     {
-        //pacane aici
+        hand=RandomHand(hand);
 
+        win=ShowSlots(hand,choice);
         if (win>0){cout<<"You won "<<win<<endl;}else{cout<<"You lost "<<bet<<endl;}
         winnings+=win-bet;
         win=0;
@@ -713,6 +751,11 @@ int Slots(int bet)
             <<"1.Play again\n";
         cout<<"You have made "<<winnings<<endl;
         cout<<"The bet is "<<bet<<endl;
+        cout<<"How much you want to bet, 0 to leave";
+        if (winnings-choice+casino.balance<0) {
+            cout<<"You dont have any money left to bet that"<<endl;
+            return winnings;
+        }
         cin>>choice;
         //qualityTools.Clear();
     }while (choice);
@@ -723,12 +766,13 @@ void Casino::SlotsStart()
 {
     int choice,win;
     cout<<"How much you wanna bet?\n";
-    cout<<"Your balance: \n"<<balance;
+    cout<<"Your balance: \n"<<casino.balance<<endl;
     cin>>choice;
     if (choice)
     {
-        balance -=choice;
+        casino.balance -=choice;
         win=Slots(choice);
     }
+    casino.balance+=win;
 }
 

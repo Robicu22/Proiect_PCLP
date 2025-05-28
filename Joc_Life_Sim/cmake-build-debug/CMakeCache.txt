@@ -28,7 +28,7 @@ CMAKE_BUILD_TYPE:STRING=Debug
 CMAKE_COLOR_DIAGNOSTICS:BOOL=ON
 
 //CXX compiler
-CMAKE_CXX_COMPILER:STRING=C:/Users/ilier/AppData/Local/Programs/CLion 2/bin/mingw/bin/g++.exe
+CMAKE_CXX_COMPILER:FILEPATH=C:/Users/ilier/AppData/Local/Programs/CLion 2/bin/mingw/bin/g++.exe
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
@@ -57,7 +57,7 @@ CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 CMAKE_CXX_STANDARD_LIBRARIES:STRING=-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
 
 //C compiler
-CMAKE_C_COMPILER:STRING=C:/Users/ilier/AppData/Local/Programs/CLion 2/bin/mingw/bin/gcc.exe
+CMAKE_C_COMPILER:FILEPATH=C:/Users/ilier/AppData/Local/Programs/CLion 2/bin/mingw/bin/gcc.exe
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
@@ -122,7 +122,7 @@ CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/Joc_Life_Sim
 CMAKE_LINKER:FILEPATH=C:/Users/ilier/AppData/Local/Programs/CLion 2/bin/mingw/bin/ld.exe
 
 //make program
-CMAKE_MAKE_PROGRAM:FILEPATH=C:/Users/ilier/AppData/Local/Programs/CLION2~1/bin/ninja/win/x64/ninja.exe
+CMAKE_MAKE_PROGRAM:FILEPATH=C:/Users/ilier/AppData/Local/Programs/CLion 2/bin/ninja/win/x64/ninja.exe
 
 //Flags used by the linker during the creation of modules during
 // all build types.
